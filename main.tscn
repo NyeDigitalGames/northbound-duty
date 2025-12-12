@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://c0b8api2mgft2" path="res://encounter_2c.gd" id="12_dg77c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_272bh"]
+resource_local_to_scene = true
 shader = ExtResource("1_ig7tw")
 shader_parameter/spread = 0.5
 shader_parameter/size = 0.5
@@ -535,7 +536,7 @@ metadata/_custom_type_script = "uid://butan76ue2pw1"
 script = ExtResource("7_272bh")
 speaker = "The Blizzard"
 dialog = "“Is that cocoa?”"
-check_flag = null
+check_flag = "has_thermos"
 metadata/_custom_type_script = "uid://butan76ue2pw1"
 
 [sub_resource type="Resource" id="Resource_41lik"]
@@ -664,7 +665,7 @@ vertical_alignment = 1
 [node name="Spacer" type="MarginContainer" parent="Dialog/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 3.0
 
 [node name="NorthButton" type="Button" parent="Dialog/VBoxContainer/Spacer"]
 layout_mode = 2

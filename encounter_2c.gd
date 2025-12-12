@@ -4,7 +4,7 @@ extends EncounterDialog
 
 
 func run() -> void:
-	super()
+	await super()
 	speaker.visible=false
 	dialog_container.visible=false
 	v_box_choices.visible=false

@@ -25,3 +25,6 @@ func start_game() -> void:
 		encounters[i].run()
 		await encounters[i].dialog_done
 	
+func change_snow(speed : float = 0.5) -> void:
+	background.material.set_shader_parameter("speed", speed)
+	pass

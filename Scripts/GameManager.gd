@@ -23,6 +23,8 @@ func add_flag (flag : String) -> void:
 	flags.append(flag)
 	
 func check_for_flag ( flag : String ) -> bool:
+	if flags.is_empty():
+		return false
 	if flags.has(flag):
 		return true
 	return false

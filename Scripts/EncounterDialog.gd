@@ -33,6 +33,7 @@ func run() -> void:
 		else:
 			print("Check for: ", line.check_flag)
 			if GameManager.check_for_flag(line.check_flag):
+				print ("Flag found!")
 				await show_dialog(line)
 			else:
 				print ("Flag not found")
