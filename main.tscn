@@ -1,0 +1,795 @@
+[gd_scene load_steps=118 format=3 uid="uid://sd8cd05562p5"]
+
+[ext_resource type="Shader" uid="uid://d18j7v7rq2ilg" path="res://Shaders/Snow.gdshader" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://3dn4324k6er1" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://cqjuktmp26p3b" path="res://Snowy Road.png" id="2_1bvp3"]
+[ext_resource type="FontFile" uid="uid://bkn44ya7mb4pt" path="res://Fonts/Cinzel-Bold.ttf" id="3_lquwl"]
+[ext_resource type="FontFile" uid="uid://c2l4l1opimwf5" path="res://Fonts/SourceSerif4-Regular.ttf" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://b1mxts3gkgp5w" path="res://Scripts/encounter_1a.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://butan76ue2pw1" path="res://Scripts/EncounterResource.gd" id="7_272bh"]
+[ext_resource type="Script" uid="uid://cfnmjdr72v1a1" path="res://Scripts/encounter_1b.gd" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://dksqosy1mqbar" path="res://encounter_1c.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://daksschk5nyg1" path="res://Scripts/encounter_2a.gd" id="10_4c57u"]
+[ext_resource type="Script" uid="uid://d10g5l4eyk2rv" path="res://encounter_2b.gd" id="11_efxa6"]
+[ext_resource type="Script" uid="uid://c0b8api2mgft2" path="res://encounter_2c.gd" id="12_dg77c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_272bh"]
+shader = ExtResource("1_ig7tw")
+shader_parameter/spread = 0.5
+shader_parameter/size = 0.5
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/snow_transparency = 0.2
+shader_parameter/speed = 0.5
+shader_parameter/wind = 0.0
+shader_parameter/num_of_layers = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0, 0, 0, 0.39215687)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0.3529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vw27"]
+
+[sub_resource type="Resource" id="Resource_272bh"]
+script = ExtResource("7_272bh")
+dialog = "You stand at the Dispatch Window of the North Pole Delivery Service."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_5vw27"]
+script = ExtResource("7_272bh")
+dialog = "Behind the glass, an elf with three clipboards and zero patience squints at you."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_kek77"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "\"Name?\""
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_4c57u"]
+script = ExtResource("7_272bh")
+dialog = "The elf stamps something aggressively."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_efxa6"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“Doesn’t matter. You’re late.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_dg77c"]
+script = ExtResource("7_272bh")
+dialog = "A battered sleigh is wheeled in behind you. It makes a noise like a filing cabinet being sad."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_ycdy4"]
+script = ExtResource("7_272bh")
+dialog = "The elf slides a small package across the counter."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_w48qg"]
+script = ExtResource("7_272bh")
+speaker = "Label"
+dialog = "DELIVER TO: THE NORTH (EXTREMELY NORTH)"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_vivmo"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“You’ll need one piece of official equipment.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_2cqfq"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“Choose wisely. Or don’t. That’s more common.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_getpj"]
+script = ExtResource("7_272bh")
+dialog = "You take the map."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_ryguw"]
+script = ExtResource("7_272bh")
+dialog = "It unfolds dramatically."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_d13ii"]
+script = ExtResource("7_272bh")
+dialog = "It is completely blank."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_1u8w0"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "The elf nods. “Ah. A confidence-based navigation tool.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_0odxb"]
+script = ExtResource("7_272bh")
+dialog = "You take the compass."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_lswn8"]
+script = ExtResource("7_272bh")
+dialog = "The needle spins wildly… then settles."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_a6jrf"]
+script = ExtResource("7_272bh")
+dialog = "It is pointing directly at you."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_xuqvo"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "The elf leans in. “Self-directed journeys are very popular this year.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_qsp4k"]
+script = ExtResource("7_272bh")
+dialog = "You take the thermos."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_kq58d"]
+script = ExtResource("7_272bh")
+dialog = "It’s warm. Comfortingly so."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_seu75"]
+script = ExtResource("7_272bh")
+dialog = "You unscrew the lid. Inside is hot cocoa."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_htxhm"]
+script = ExtResource("7_272bh")
+dialog = "And glitter."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_jq2sk"]
+script = ExtResource("7_272bh")
+dialog = "So much glitter."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_4k2k6"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "The elf winces. “Festive batch.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_yaehf"]
+script = ExtResource("7_272bh")
+dialog = "The elf stamps your paperwork again. And again."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_074og"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“Before you go, I have to ask a standard pre-departure question.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_cegan"]
+script = ExtResource("7_272bh")
+dialog = "They look you dead in the eye."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_82xsv"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“What exactly do you think The North is?”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_0rl1p"]
+script = ExtResource("7_272bh")
+speaker = "You"
+dialog = "“A place,” you say confidently."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_ok6jj"]
+script = ExtResource("7_272bh")
+dialog = "The elf slowly closes one clipboard."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_facbu"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“That’s… the most common answer.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_b1qrp"]
+script = ExtResource("7_272bh")
+dialog = "They hesitate."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_come4"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“Statistically, it’s also the one with the highest incident rate.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_h8e4i"]
+script = ExtResource("7_272bh")
+speaker = "You"
+dialog = "“A person?” you ask."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_4lmeg"]
+script = ExtResource("7_272bh")
+dialog = "The elf freezes."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_0cp0l"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“…Who told you that?”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_d2t1y"]
+script = ExtResource("7_272bh")
+dialog = "They recover quickly. Too quickly."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_gngh3"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“Never mind. Officially, it’s a concept.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_0n3wm"]
+script = ExtResource("7_272bh")
+speaker = "You"
+dialog = "“I try not to think about it,” you say."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_qnost"]
+script = ExtResource("7_272bh")
+dialog = "The elf exhales in relief."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_wnkbs"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“Oh thank goodness. That’s the healthiest approach.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_f6a44"]
+script = ExtResource("7_272bh")
+dialog = "The elf slides the package back toward you."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_0cbny"]
+script = ExtResource("7_272bh")
+speaker = "Disaptch Elf"
+dialog = "“Right. Sleigh’s fueled. Reindeer’s… cooperative adjacent.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_hrvbo"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“You can only go north.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_uypp3"]
+script = ExtResource("7_272bh")
+dialog = "They open a door behind you. Cold air rushes in."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_blkrb"]
+script = ExtResource("7_272bh")
+dialog = "Snow stretches endlessly ahead."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_abqjc"]
+script = ExtResource("7_272bh")
+dialog = "The elf calls after you:"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_6iyjs"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“If anything goes wrong—”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_4w656"]
+script = ExtResource("7_272bh")
+dialog = "They pause."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_e71vb"]
+script = ExtResource("7_272bh")
+speaker = "Dispatch Elf"
+dialog = "“—don’t come back.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_rnkwl"]
+script = ExtResource("7_272bh")
+dialog = "The sleigh rattles forward into open snow."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_vke2r"]
+script = ExtResource("7_272bh")
+dialog = "The wind picks up. Snow whips sideways. Visibility drops to nearly nothing."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_uit24"]
+script = ExtResource("7_272bh")
+dialog = "Then the wind stops."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_ruth0"]
+script = ExtResource("7_272bh")
+dialog = "A face forms in the swirling snow."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_rm4vd"]
+script = ExtResource("7_272bh")
+dialog = "It squints at you."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_pjyto"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Ugh,”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_sm6fg"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Another one.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_f3y11"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Also… why are you sparkling?”"
+check_flag = "glitter_spill"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_b17eg"]
+script = ExtResource("7_272bh")
+speaker = "You"
+dialog = "“Hello,” you say, raising your voice over the wind."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_ntx8l"]
+script = ExtResource("7_272bh")
+dialog = "The blizzard blinks."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_uatky"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Wow. Manners.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_rqtf5"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“That’s new.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_1vm84"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Oh. One of those journeys.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_wu3dr"]
+script = ExtResource("7_272bh")
+dialog = "You lean forward and urge the reindeer onward."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_cyx1q"]
+script = ExtResource("7_272bh")
+dialog = "The blizzard immediately moves with you."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_0dhbp"]
+script = ExtResource("7_272bh")
+dialog = "Faster."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_jx0wj"]
+script = ExtResource("7_272bh")
+dialog = "Louder."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_kkkcx"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Oh no,” it says cheerfully."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_34ol3"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“If you’re ignoring me, I’m definitely part of this now.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_c2n8d"]
+script = ExtResource("7_272bh")
+speaker = "You"
+dialog = "“You’re just weather,” you shout."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_wy5fy"]
+script = ExtResource("7_272bh")
+dialog = "The blizzard gasps."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_gx4rg"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“JUST weather?”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_5dllo"]
+script = ExtResource("7_272bh")
+dialog = "Snow slams into your face."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_phcyf"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“I have depth.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_birbe"]
+script = ExtResource("7_272bh")
+dialog = "The blizzard circles the sleigh thoughtfully."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_f1p13"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Alright,”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_4obbf"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Let’s get this over with.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_ovcoh"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“What do you want?”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_ppx11"]
+script = ExtResource("7_272bh")
+speaker = "You"
+dialog = "“I need to go north,” you say."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_1yv1y"]
+script = ExtResource("7_272bh")
+dialog = "The blizzard laughs."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_5yh34"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Everyone does.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_pjuso"]
+script = ExtResource("7_272bh")
+dialog = "It glances at your blank map."
+check_flag = "map_confidence"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_23xmf"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Bold.”"
+check_flag = "map_confidence"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_swlj1"]
+script = ExtResource("7_272bh")
+dialog = "It nods approvingly."
+check_flag = "existential_compass"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_yysqy"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Ah. Self-referential navigation. Risky.”"
+check_flag = "existential_compass"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_n5t1e"]
+script = ExtResource("7_272bh")
+dialog = "You offer the blizzard… something."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_h6isl"]
+script = ExtResource("7_272bh")
+dialog = "You hold up the thermos."
+check_flag = "has_thermos"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_53bls"]
+script = ExtResource("7_272bh")
+dialog = "The blizzard peers inside."
+check_flag = "has_thermos"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_lwnsi"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“Is that cocoa?”"
+check_flag = null
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_41lik"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“…Is that glitter?”"
+check_flag = "has_thermos"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_jbvwl"]
+script = ExtResource("7_272bh")
+dialog = "You offer the map."
+check_flag = "has_map"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_sn1fb"]
+script = ExtResource("7_272bh")
+dialog = "The blizzard squints."
+check_flag = "has_map"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_yvsr8"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“That’s nothing.”"
+check_flag = "has_map"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_vieuh"]
+script = ExtResource("7_272bh")
+dialog = "You show the compass."
+check_flag = "has_compass"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_yjja3"]
+script = ExtResource("7_272bh")
+dialog = "It watches the needle spin."
+check_flag = "has_compass"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_l0gw7"]
+script = ExtResource("7_272bh")
+dialog = "“Wow. That’s upsetting.”"
+check_flag = "has_compass"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_inymm"]
+script = ExtResource("7_272bh")
+speaker = "You"
+dialog = "“Do you have a permit for this level of snowfall?” you ask."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_jcxqu"]
+script = ExtResource("7_272bh")
+dialog = "The blizzard freezes."
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_0arob"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“…Do you?”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_dij0e"]
+script = ExtResource("7_272bh")
+dialog = "(Long awkward pause.)"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[sub_resource type="Resource" id="Resource_k1udn"]
+script = ExtResource("7_272bh")
+speaker = "The Blizzard"
+dialog = "“I hate paperwork.”"
+metadata/_custom_type_script = "uid://butan76ue2pw1"
+
+[node name="Main" type="Control" node_paths=PackedStringArray("encounters")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lquwl")
+encounters = [NodePath("Encounter1a"), NodePath("Encounter1b"), NodePath("Encounter1c"), NodePath("Encounter2a"), NodePath("Encounter2b"), NodePath("Encounter2c")]
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_272bh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1bvp3")
+expand_mode = 3
+
+[node name="Dialog" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Speaker" type="PanelContainer" parent="Dialog/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
+
+[node name="SpeakerLabel" type="Label" parent="Dialog/VBoxContainer/Speaker"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_lquwl")
+theme_override_font_sizes/font_size = 32
+text = "Disaptch Elf"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="MarginContainer" parent="Dialog/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="NorthButton" type="Button" parent="Dialog/VBoxContainer/Spacer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_7mycd")
+theme_override_font_sizes/font_size = 24
+text = "Head North"
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialog/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="DialogContainer" type="PanelContainer" parent="Dialog/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lquwl")
+
+[node name="Dialog" type="Label" parent="Dialog/VBoxContainer/MarginContainer/DialogContainer"]
+custom_minimum_size = Vector2(580, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_fonts/font = ExtResource("4_7mycd")
+theme_override_font_sizes/font_size = 24
+text = "“Choose wisely. Or don’t. That’s more common.”"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NextButton" type="Button" parent="Dialog/VBoxContainer/MarginContainer/DialogContainer/Dialog"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Next"
+
+[node name="Choices" type="PanelContainer" parent="Dialog/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5vw27")
+
+[node name="VBoxChoices" type="VBoxContainer" parent="Dialog/VBoxContainer/Choices"]
+layout_mode = 2
+alignment = 1
+
+[node name="Choice1" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_7mycd")
+theme_override_font_sizes/font_size = 24
+text = "Take the Map"
+
+[node name="Choice2" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_7mycd")
+theme_override_font_sizes/font_size = 24
+text = "Take the Compass"
+
+[node name="Choice3" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_7mycd")
+theme_override_font_sizes/font_size = 24
+text = "Take the Thermos
+"
+
+[node name="Encounter1a" type="Node" parent="."]
+script = ExtResource("6_7mycd")
+dialog_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_272bh"), SubResource("Resource_5vw27"), SubResource("Resource_kek77"), SubResource("Resource_4c57u"), SubResource("Resource_efxa6"), SubResource("Resource_dg77c"), SubResource("Resource_ycdy4"), SubResource("Resource_w48qg"), SubResource("Resource_vivmo"), SubResource("Resource_2cqfq")])
+choice1 = "Take the Map"
+choice1_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_getpj"), SubResource("Resource_ryguw"), SubResource("Resource_d13ii"), SubResource("Resource_1u8w0")])
+choice2 = "Take the Compass"
+choice2_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_0odxb"), SubResource("Resource_lswn8"), SubResource("Resource_a6jrf"), SubResource("Resource_xuqvo")])
+choice3 = "Take the Thermos"
+choice3_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_qsp4k"), SubResource("Resource_kq58d"), SubResource("Resource_seu75"), SubResource("Resource_htxhm"), SubResource("Resource_jq2sk"), SubResource("Resource_4k2k6")])
+
+[node name="Encounter1b" type="Node" parent="."]
+script = ExtResource("8_5vw27")
+dialog_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_yaehf"), SubResource("Resource_074og"), SubResource("Resource_cegan"), SubResource("Resource_82xsv")])
+choice1 = "A place."
+choice1_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_0rl1p"), SubResource("Resource_ok6jj"), SubResource("Resource_facbu"), SubResource("Resource_b1qrp"), SubResource("Resource_come4")])
+choice2 = "A person?"
+choice2_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_h8e4i"), SubResource("Resource_4lmeg"), SubResource("Resource_0cp0l"), SubResource("Resource_d2t1y"), SubResource("Resource_gngh3")])
+choice3 = "I try not to think about it."
+choice3_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_0n3wm"), SubResource("Resource_qnost"), SubResource("Resource_wnkbs")])
+
+[node name="Encounter1c" type="Node" parent="."]
+script = ExtResource("9_kek77")
+dialog_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_f6a44"), SubResource("Resource_0cbny"), SubResource("Resource_hrvbo"), SubResource("Resource_uypp3"), SubResource("Resource_blkrb"), SubResource("Resource_abqjc"), SubResource("Resource_6iyjs"), SubResource("Resource_4w656"), SubResource("Resource_e71vb")])
+metadata/_custom_type_script = "uid://cv7g2stkkejw2"
+
+[node name="Encounter2a" type="Node" parent="."]
+script = ExtResource("10_4c57u")
+dialog_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_rnkwl"), SubResource("Resource_vke2r"), SubResource("Resource_uit24"), SubResource("Resource_ruth0"), SubResource("Resource_rm4vd"), SubResource("Resource_pjyto"), SubResource("Resource_sm6fg"), SubResource("Resource_f3y11")])
+choice1 = "Politely greet the blizzard"
+choice1_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_b17eg"), SubResource("Resource_ntx8l"), SubResource("Resource_uatky"), SubResource("Resource_rqtf5"), SubResource("Resource_1vm84")])
+choice2 = "Try to push through without engaging"
+choice2_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_wu3dr"), SubResource("Resource_cyx1q"), SubResource("Resource_0dhbp"), SubResource("Resource_jx0wj"), SubResource("Resource_kkkcx"), SubResource("Resource_34ol3")])
+choice3 = "Insult it (“You’re just weather.”)"
+choice3_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_c2n8d"), SubResource("Resource_wy5fy"), SubResource("Resource_gx4rg"), SubResource("Resource_5dllo"), SubResource("Resource_phcyf")])
+metadata/_custom_type_script = "uid://cv7g2stkkejw2"
+
+[node name="Encounter2b" type="Node" parent="."]
+script = ExtResource("11_efxa6")
+dialog_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_birbe"), SubResource("Resource_f1p13"), SubResource("Resource_4obbf"), SubResource("Resource_ovcoh")])
+choice1 = "Ask it to help you travel north"
+choice1_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_ppx11"), SubResource("Resource_1yv1y"), SubResource("Resource_5yh34"), SubResource("Resource_pjuso"), SubResource("Resource_23xmf"), SubResource("Resource_swlj1"), SubResource("Resource_yysqy")])
+choice2 = "Offer it something"
+choice2_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_n5t1e"), SubResource("Resource_h6isl"), SubResource("Resource_53bls"), SubResource("Resource_lwnsi"), SubResource("Resource_41lik"), SubResource("Resource_jbvwl"), SubResource("Resource_sn1fb"), SubResource("Resource_yvsr8"), SubResource("Resource_vieuh"), SubResource("Resource_yjja3"), SubResource("Resource_l0gw7")])
+choice3 = "Attempt bureaucratic nonsense (“Do you have a permit?”)"
+choice3_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_inymm"), SubResource("Resource_jcxqu"), SubResource("Resource_0arob"), SubResource("Resource_dij0e"), SubResource("Resource_k1udn")])
+metadata/_custom_type_script = "uid://cv7g2stkkejw2"
+
+[node name="Encounter2c" type="Node" parent="."]
+script = ExtResource("12_dg77c")
+metadata/_custom_type_script = "uid://cv7g2stkkejw2"
