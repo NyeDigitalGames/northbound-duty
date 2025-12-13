@@ -1,4 +1,4 @@
-[gd_scene load_steps=340 format=3 uid="uid://sd8cd05562p5"]
+[gd_scene load_steps=343 format=3 uid="uid://sd8cd05562p5"]
 
 [ext_resource type="Shader" uid="uid://d18j7v7rq2ilg" path="res://Shaders/Snow.gdshader" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://3dn4324k6er1" path="res://main.gd" id="1_lquwl"]
@@ -157,6 +157,51 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vw27"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lswn8"]
+bg_color = Color(0, 0, 0, 0.6745098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6jrf"]
+bg_color = Color(0.24313726, 0.2509804, 0.08235294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuqvo"]
+bg_color = Color(0.24313726, 0.2509804, 0.08235294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="Resource" id="Resource_272bh"]
 script = ExtResource("7_272bh")
@@ -2003,11 +2048,12 @@ text = "Next"
 [node name="Choices" type="PanelContainer" parent="Dialog/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 2.5
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5vw27")
 
 [node name="VBoxChoices" type="VBoxContainer" parent="Dialog/VBoxContainer/Choices"]
 layout_mode = 2
+theme_override_constants/separation = 12
 alignment = 1
 
 [node name="Choice1" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
@@ -2015,6 +2061,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_7mycd")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lswn8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a6jrf")
 text = "Take the Map"
 
 [node name="Choice2" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
@@ -2022,6 +2070,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_7mycd")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lswn8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xuqvo")
 text = "Take the Compass"
 
 [node name="Choice3" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
@@ -2029,6 +2079,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("4_7mycd")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lswn8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xuqvo")
 text = "Take the Thermos
 "
 
@@ -2075,7 +2127,7 @@ choice1 = "Ask it to help you travel north"
 choice1_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_ppx11"), SubResource("Resource_1yv1y"), SubResource("Resource_5yh34"), SubResource("Resource_pjuso"), SubResource("Resource_23xmf"), SubResource("Resource_swlj1"), SubResource("Resource_yysqy")])
 choice2 = "Offer it something"
 choice2_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_n5t1e"), SubResource("Resource_h6isl"), SubResource("Resource_53bls"), SubResource("Resource_lwnsi"), SubResource("Resource_41lik"), SubResource("Resource_jbvwl"), SubResource("Resource_sn1fb"), SubResource("Resource_yvsr8"), SubResource("Resource_vieuh"), SubResource("Resource_yjja3"), SubResource("Resource_l0gw7")])
-choice3 = "Bbureaucratic nonsense (“Do you have a permit?”)"
+choice3 = "Bureaucratic nonsense (“Do you have a permit?”)"
 choice3_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_inymm"), SubResource("Resource_jcxqu"), SubResource("Resource_0arob"), SubResource("Resource_dij0e"), SubResource("Resource_k1udn")])
 metadata/_custom_type_script = "uid://cv7g2stkkejw2"
 
