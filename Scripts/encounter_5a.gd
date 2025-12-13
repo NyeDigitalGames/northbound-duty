@@ -20,6 +20,6 @@ func choice_2_pressed() -> void:
 	
 func choice_3_pressed() -> void:
 	GameManager.add_flag('delivery_honest')
-	#GameManager.update_catastrophe(-1)
+	GameManager.update_catastrophe(-1)
 	super()
 	pass
