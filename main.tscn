@@ -1,4 +1,4 @@
-[gd_scene load_steps=334 format=3 uid="uid://sd8cd05562p5"]
+[gd_scene load_steps=340 format=3 uid="uid://sd8cd05562p5"]
 
 [ext_resource type="Shader" uid="uid://d18j7v7rq2ilg" path="res://Shaders/Snow.gdshader" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://3dn4324k6er1" path="res://main.gd" id="1_lquwl"]
@@ -31,10 +31,40 @@ shader_parameter/snow_transparency = 0.2
 shader_parameter/speed = 0.5
 shader_parameter/wind = 0.0
 shader_parameter/wind_offset = 0.0
-shader_parameter/num_of_layers = 40
+shader_parameter/num_of_layers = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
 bg_color = Color(0, 0, 0, 0.39215687)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u8w0"]
+bg_color = Color(0, 0, 0, 0.39215687)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0odxb"]
+bg_color = Color(0, 0, 0, 0.6745098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
 content_margin_left = 5.0
@@ -53,6 +83,66 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vivmo"]
 bg_color = Color(0.18359044, 0.18359047, 0.18359032, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82xsv"]
+bg_color = Color(0, 0, 0, 0.6745098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryguw"]
+bg_color = Color(0, 0, 0, 0.6745098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_getpj"]
+bg_color = Color(0.24313726, 0.2509804, 0.08235294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d13ii"]
+bg_color = Color(0, 0, 0, 0.6745098)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -107,7 +197,7 @@ metadata/_custom_type_script = "uid://butan76ue2pw1"
 
 [sub_resource type="Resource" id="Resource_w48qg"]
 script = ExtResource("7_272bh")
-speaker = "Label"
+speaker = "Package Label"
 dialog = "DELIVER TO: THE NORTH (EXTREMELY NORTH)"
 metadata/_custom_type_script = "uid://butan76ue2pw1"
 
@@ -298,7 +388,7 @@ metadata/_custom_type_script = "uid://butan76ue2pw1"
 
 [sub_resource type="Resource" id="Resource_0cbny"]
 script = ExtResource("7_272bh")
-speaker = "Disaptch Elf"
+speaker = "Dispatch Elf"
 dialog = "“Right. Sleigh’s fueled. Reindeer’s… cooperative adjacent.”"
 metadata/_custom_type_script = "uid://butan76ue2pw1"
 
@@ -1055,13 +1145,13 @@ metadata/_custom_type_script = "uid://butan76ue2pw1"
 
 [sub_resource type="Resource" id="Resource_uor2d"]
 script = ExtResource("7_272bh")
-speaker = "Elf Therpist"
+speaker = "Elf Therapist"
 dialog = "“Hello,” the elf says gently."
 metadata/_custom_type_script = "uid://butan76ue2pw1"
 
 [sub_resource type="Resource" id="Resource_j6smb"]
 script = ExtResource("7_272bh")
-speaker = "Elf Therpist"
+speaker = "Elf Therapist"
 dialog = "“Before you proceed north, your reindeer has requested a wellness check.”"
 metadata/_custom_type_script = "uid://butan76ue2pw1"
 
@@ -1073,7 +1163,7 @@ metadata/_custom_type_script = "uid://butan76ue2pw1"
 
 [sub_resource type="Resource" id="Resource_6ff2c"]
 script = ExtResource("7_272bh")
-speaker = "Elf Therpist"
+speaker = "Elf Therapist"
 dialog = "“I can see why.”"
 check_flag = "catastrophe6"
 metadata/_custom_type_script = "uid://butan76ue2pw1"
@@ -1803,6 +1893,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lquwl")
 encounters = [NodePath("Disaptch_Intro"), NodePath("Dispatch_Followup"), NodePath("Dispatch_Departure"), NodePath("Blizzard_Intro"), NodePath("Blizzard_Escalation"), NodePath("Blizzard_Resolution"), NodePath("Penguin_Intro"), NodePath("Penguin_Test"), NodePath("Penguin_Resolution"), NodePath("Reindeer_Intro"), NodePath("Reindeer_Demand"), NodePath("Reindeer_Resolution"), NodePath("North_Intro"), NodePath("North_Question"), NodePath("North_Open_Package")]
+wind_scale = -2.96
 
 [node name="Background" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_272bh")
@@ -1831,12 +1922,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Speaker" type="PanelContainer" parent="Dialog/VBoxContainer"]
+[node name="Location" type="PanelContainer" parent="Dialog/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
 
-[node name="SpeakerLabel" type="Label" parent="Dialog/VBoxContainer/Speaker"]
+[node name="LocationLabel" type="Label" parent="Dialog/VBoxContainer/Location"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_lquwl")
@@ -1854,8 +1945,11 @@ size_flags_stretch_ratio = 3.0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 0
 theme_override_fonts/font = ExtResource("4_7mycd")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1u8w0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0odxb")
 text = "Head North"
 
 [node name="MarginContainer" type="MarginContainer" parent="Dialog/VBoxContainer"]
@@ -1883,19 +1977,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="NextButton" type="Button" parent="Dialog/VBoxContainer/MarginContainer/DialogContainer/Dialog"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Next"
-
 [node name="PanelContainer" type="PanelContainer" parent="Dialog/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1907,6 +1988,17 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_lquwl")
 theme_override_font_sizes/font_size = 24
 text = "Dispatch Elf"
+
+[node name="NextButton" type="Button" parent="Dialog/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_82xsv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ryguw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_getpj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_d13ii")
+text = "Next"
 
 [node name="Choices" type="PanelContainer" parent="Dialog/VBoxContainer"]
 layout_mode = 2
@@ -1983,7 +2075,7 @@ choice1 = "Ask it to help you travel north"
 choice1_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_ppx11"), SubResource("Resource_1yv1y"), SubResource("Resource_5yh34"), SubResource("Resource_pjuso"), SubResource("Resource_23xmf"), SubResource("Resource_swlj1"), SubResource("Resource_yysqy")])
 choice2 = "Offer it something"
 choice2_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_n5t1e"), SubResource("Resource_h6isl"), SubResource("Resource_53bls"), SubResource("Resource_lwnsi"), SubResource("Resource_41lik"), SubResource("Resource_jbvwl"), SubResource("Resource_sn1fb"), SubResource("Resource_yvsr8"), SubResource("Resource_vieuh"), SubResource("Resource_yjja3"), SubResource("Resource_l0gw7")])
-choice3 = "Attempt bureaucratic nonsense (“Do you have a permit?”)"
+choice3 = "Bbureaucratic nonsense (“Do you have a permit?”)"
 choice3_tree = Array[ExtResource("7_272bh")]([SubResource("Resource_inymm"), SubResource("Resource_jcxqu"), SubResource("Resource_0arob"), SubResource("Resource_dij0e"), SubResource("Resource_k1udn")])
 metadata/_custom_type_script = "uid://cv7g2stkkejw2"
 

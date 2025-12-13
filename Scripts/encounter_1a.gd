@@ -1,5 +1,12 @@
 extends EncounterDialog
+@onready var main: Control = $".."
 
+func run() -> void:
+	$"../Dialog/VBoxContainer/Location/LocationLabel".text = 'Dispatch Center'
+	main.change_snow_layers(0)
+	main.change_snow(0.0)
+	super()
+	
 func choice_1_pressed() -> void:
 	GameManager.add_item(GameManager.ITEMS.MAP)
 	GameManager.add_flag('has_map')

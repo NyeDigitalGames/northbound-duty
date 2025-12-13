@@ -2,7 +2,8 @@ extends EncounterDialog
 @onready var main: Control = $".."
 
 func run() -> void:
-	main.change_snow_layers(40)
+	$"../Dialog/VBoxContainer/Location/LocationLabel".text = 'Snowy Pass'
+	main.change_snow_layers(80)
 	main.change_snow(5.0)
 	super()
 	

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://3qqxthw8rx58"]
+
+[ext_resource type="Script" uid="uid://dxcigqyd0ucm5" path="res://Audio Manager/AudioManager.gd" id="1_agton"]
+[ext_resource type="AudioStream" uid="uid://di3erucowirb8" path="res://the-first-day-of-snow-125501.mp3" id="2_kmohw"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_agton")
+background_music = ExtResource("2_kmohw")

@@ -6,7 +6,8 @@ var item : ITEMS = ITEMS.NONE
 var flags : Array[String] = []
 var catastrophe_level : int = 0
 var package_condition : int = 5
-var end_title : String = ''
+var end_title : String = 'RETURN TO SENDER (METAPHYSICALLY).'
+var ending_number : int = 0
 
 func _ready() -> void:
 	reset_values()

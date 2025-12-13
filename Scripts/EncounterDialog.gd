@@ -7,7 +7,7 @@ signal dialog_advanced
 @onready var speaker_label: Label = $"../Dialog/VBoxContainer/MarginContainer/PanelContainer/Label"
 @onready var dialog_container: PanelContainer = $"../Dialog/VBoxContainer/MarginContainer/DialogContainer"
 @onready var dialog: Label = $"../Dialog/VBoxContainer/MarginContainer/DialogContainer/Dialog"
-@onready var next_button: Button = $"../Dialog/VBoxContainer/MarginContainer/DialogContainer/Dialog/NextButton"
+@onready var next_button: Button = $"../Dialog/VBoxContainer/MarginContainer/NextButton"
 @onready var v_box_choices: VBoxContainer = $"../Dialog/VBoxContainer/Choices/VBoxChoices"
 @onready var choice_1: Button = $"../Dialog/VBoxContainer/Choices/VBoxChoices/Choice1"
 @onready var choice_2: Button = $"../Dialog/VBoxContainer/Choices/VBoxChoices/Choice2"
@@ -108,6 +108,7 @@ func followup( choice_tree : Array) -> void:
 		dialog_container.visible=true
 		next_button.visible=true
 		await next_button.pressed
+		get_viewport().gui_release_focus()
 	done()
 	pass
 

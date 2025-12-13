@@ -4,7 +4,7 @@ extends Control
 @onready var speaker_label: Label = $Dialog/VBoxContainer/MarginContainer/PanelContainer/Label
 @onready var north_button: Button = $Dialog/VBoxContainer/Spacer/NorthButton
 @onready var dialog_container: PanelContainer = $Dialog/VBoxContainer/MarginContainer/DialogContainer
-@onready var next_button: Button = $Dialog/VBoxContainer/MarginContainer/DialogContainer/Dialog/NextButton
+@onready var next_button: Button = $Dialog/VBoxContainer/MarginContainer/NextButton
 @onready var v_box_choices: VBoxContainer = $Dialog/VBoxContainer/Choices/VBoxChoices
 @onready var choice_1: Button = $Dialog/VBoxContainer/Choices/VBoxChoices/Choice1
 @onready var choice_2: Button = $Dialog/VBoxContainer/Choices/VBoxChoices/Choice2
@@ -22,6 +22,9 @@ var current_snow_speed: float = 0.5
 @export var snow_speed: float = 0.5     # should match the shader 'speed' uniform if you change it
 
 func _ready() -> void:
+	# Play menu music
+	if AudioManager:
+		AudioManager.play_music()
 	speaker_label.text = ''
 	north_button.visible=false
 	dialog_container.visible=false

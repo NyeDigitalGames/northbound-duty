@@ -1,5 +1,12 @@
 extends EncounterDialog
+@onready var main: Control = $".."
 
+func run() -> void:
+	$"../Dialog/VBoxContainer/Location/LocationLabel".text = 'Random Toll Booth'
+	main.change_snow_layers(40)
+	main.change_snow(2.0)
+	super()
+	
 func choice_1_pressed() -> void:
 	GameManager.add_flag('penguins_tolerate_you')
 	super()

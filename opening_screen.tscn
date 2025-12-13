@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://5egevpukx25j"]
+[gd_scene load_steps=11 format=3 uid="uid://5egevpukx25j"]
 
+[ext_resource type="Script" uid="uid://c43itc1xq4ish" path="res://opening_screen.gd" id="1_hdnta"]
 [ext_resource type="Shader" uid="uid://d18j7v7rq2ilg" path="res://Shaders/Snow.gdshader" id="1_pdbg4"]
 [ext_resource type="Texture2D" uid="uid://cqjuktmp26p3b" path="res://Snowy Road.png" id="2_hdnta"]
 [ext_resource type="FontFile" uid="uid://bkn44ya7mb4pt" path="res://Fonts/Cinzel-Bold.ttf" id="3_t8s8l"]
@@ -15,28 +16,15 @@ shader_parameter/snow_transparency = 0.2
 shader_parameter/speed = 0.5
 shader_parameter/wind = 0.0
 shader_parameter/wind_offset = 0.0
-shader_parameter/num_of_layers = 40
+shader_parameter/num_of_layers = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbj2a"]
 bg_color = Color(0, 0, 0, 0.39215687)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f33ud"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
-bg_color = Color(0.6, 0.6, 0.6, 0.3529412)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdnta"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpe70"]
-bg_color = Color(0.18359044, 0.18359047, 0.18359032, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdnta"]
+bg_color = Color(0, 0, 0, 0.39215687)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -50,7 +38,20 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1pth"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8s8l"]
+bg_color = Color(0, 0, 0, 0.6745098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [node name="Opening Screen" type="Control"]
 layout_mode = 3
@@ -59,6 +60,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hdnta")
+opening_text = Array[String](["Every winter, the North Pole Delivery Service sends out packages.", "Most go south. Some go east or west.", "One goes north.", "No one is entirely sure what that means.", "This year, that delivery is yours.", "You have been given:", "A sleigh of questionable reliability", "A reindeer with unresolved feelings", "A package labeled “EXTREMELY NORTH”", "There is no map back.", "There is no appeal process.", "You may proceed when ready.", "You can only go North."])
 
 [node name="Background" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_2afhe")
@@ -92,19 +95,21 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_nbj2a")
 
-[node name="SpeakerLabel" type="Label" parent="Dialog/VBoxContainer/Speaker"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialog/VBoxContainer/Speaker"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Dialog/VBoxContainer/Speaker/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_t8s8l")
 theme_override_font_sizes/font_size = 32
-text = "ENDING"
+text = "Northbound Duty"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Spacer" type="MarginContainer" parent="Dialog/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 3.0
 
 [node name="NorthButton" type="Button" parent="Dialog/VBoxContainer/Spacer"]
 visible = false
@@ -118,16 +123,16 @@ text = "Head North"
 [node name="MarginContainer" type="MarginContainer" parent="Dialog/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 3.0
+size_flags_stretch_ratio = 5.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="DialogContainer" type="PanelContainer" parent="Dialog/VBoxContainer/MarginContainer"]
-visible = false
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f33ud")
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hdnta")
 
 [node name="Dialog" type="Label" parent="Dialog/VBoxContainer/MarginContainer/DialogContainer"]
 custom_minimum_size = Vector2(580, 0)
@@ -137,65 +142,17 @@ size_flags_stretch_ratio = 3.0
 theme_override_fonts/font = ExtResource("4_ikthu")
 theme_override_font_sizes/font_size = 24
 text = "“Choose wisely. Or don’t. That’s more common.”"
-horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="NextButton" type="Button" parent="Dialog/VBoxContainer/MarginContainer/DialogContainer/Dialog"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Next"
-
-[node name="PanelContainer" type="PanelContainer" parent="Dialog/VBoxContainer/MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jpe70")
-
-[node name="Label" type="Label" parent="Dialog/VBoxContainer/MarginContainer/PanelContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_t8s8l")
-theme_override_font_sizes/font_size = 24
-text = "Dispatch Elf"
-
-[node name="Choices" type="PanelContainer" parent="Dialog/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_y1pth")
-
-[node name="VBoxChoices" type="VBoxContainer" parent="Dialog/VBoxContainer/Choices"]
-visible = false
-layout_mode = 2
-alignment = 1
-
-[node name="Choice1" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
+[node name="NextButton" type="Button" parent="Dialog/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("4_ikthu")
-theme_override_font_sizes/font_size = 24
-text = "Take the Map"
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdnta")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t8s8l")
+text = "Start"
 
-[node name="Choice2" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_ikthu")
-theme_override_font_sizes/font_size = 24
-text = "Take the Compass"
-
-[node name="Choice3" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("4_ikthu")
-theme_override_font_sizes/font_size = 24
-text = "Take the Thermos
-"
+[node name="Timer" type="Timer" parent="."]
