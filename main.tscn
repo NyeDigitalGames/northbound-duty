@@ -1,4 +1,4 @@
-[gd_scene load_steps=209 format=3 uid="uid://sd8cd05562p5"]
+[gd_scene load_steps=210 format=3 uid="uid://sd8cd05562p5"]
 
 [ext_resource type="Shader" uid="uid://d18j7v7rq2ilg" path="res://Shaders/Snow.gdshader" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://3dn4324k6er1" path="res://main.gd" id="1_lquwl"]
@@ -25,6 +25,7 @@ shader_parameter/snow_color = Color(1, 1, 1, 1)
 shader_parameter/snow_transparency = 0.2
 shader_parameter/speed = 0.5
 shader_parameter/wind = 0.0
+shader_parameter/wind_offset = 0.0
 shader_parameter/num_of_layers = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
@@ -44,6 +45,21 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vivmo"]
+bg_color = Color(0.18359044, 0.18359047, 0.18359032, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5vw27"]
 
@@ -1169,7 +1185,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_lquwl")
 theme_override_font_sizes/font_size = 32
-text = "Disaptch Elf"
+text = "Disaptch Center"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1207,6 +1223,7 @@ size_flags_stretch_ratio = 3.0
 theme_override_fonts/font = ExtResource("4_7mycd")
 theme_override_font_sizes/font_size = 24
 text = "“Choose wisely. Or don’t. That’s more common.”"
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
@@ -1222,6 +1239,18 @@ offset_top = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Next"
+
+[node name="PanelContainer" type="PanelContainer" parent="Dialog/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vivmo")
+
+[node name="Label" type="Label" parent="Dialog/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lquwl")
+theme_override_font_sizes/font_size = 24
+text = "Dispatch Elf"
 
 [node name="Choices" type="PanelContainer" parent="Dialog/VBoxContainer"]
 layout_mode = 2

@@ -1,9 +1,10 @@
 class_name EncounterDialog extends Node
 
 signal dialog_done
+signal dialog_advanced
 
-@onready var speaker: PanelContainer = $"../Dialog/VBoxContainer/Speaker"
-@onready var speaker_label: Label = $"../Dialog/VBoxContainer/Speaker/SpeakerLabel"
+@onready var speaker: PanelContainer = $"../Dialog/VBoxContainer/MarginContainer/PanelContainer"
+@onready var speaker_label: Label = $"../Dialog/VBoxContainer/MarginContainer/PanelContainer/Label"
 @onready var dialog_container: PanelContainer = $"../Dialog/VBoxContainer/MarginContainer/DialogContainer"
 @onready var dialog: Label = $"../Dialog/VBoxContainer/MarginContainer/DialogContainer/Dialog"
 @onready var next_button: Button = $"../Dialog/VBoxContainer/MarginContainer/DialogContainer/Dialog/NextButton"
@@ -20,7 +21,13 @@ signal dialog_done
 @export var choice3 : String = ''
 @export var choice3_tree : Array[DialogLine] = []
 
+var counter : int = 0
+
+func track_changes() -> void:
+	counter +=1
+
 func run() -> void:
+	dialog_advanced.connect(track_changes)
 	dialog.text = ''
 	v_box_choices.visible=false
 	choice_1.text = choice1
@@ -44,13 +51,24 @@ func run() -> void:
 	choice_2.pressed.connect (choice_2_pressed)
 	choice_3.pressed.connect (choice_3_pressed)
 
+func setup_speaker(speaking:String) -> void:
+	var style := speaker.get_theme_stylebox("panel") as StyleBoxFlat
+	if speaking == "Dispatch Elf":
+		style.bg_color = Color(0.151, 0.329, 0.212, 1.0)
+	elif speaking == "Narrator":
+		style.bg_color = Color(0.539, 0.024, 0.165, 1.0)
+	else:
+		style.bg_color = Color(0.18, 0.18, 0.18, 0.8)
+
 func show_dialog(line)->void:
 	speaker_label.text = line.speaker
+	setup_speaker(line.speaker)
 	speaker.visible=true
 	dialog.text = line.dialog
 	dialog_container.visible=true
 	next_button.visible=true
 	await next_button.pressed
+	dialog_advanced.emit()
 
 func choice_1_pressed() -> void:
 	followup(choice1_tree)
@@ -79,6 +97,7 @@ func followup( choice_tree : Array) -> void:
 			if !GameManager.check_for_flag(line.check_flag):
 				continue
 		speaker_label.text = line.speaker
+		setup_speaker(line.speaker)
 		dialog.text = line.dialog
 		dialog_container.visible=true
 		next_button.visible=true

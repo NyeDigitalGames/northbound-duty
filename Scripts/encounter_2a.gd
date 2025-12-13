@@ -2,6 +2,7 @@ extends EncounterDialog
 @onready var main: Control = $".."
 
 func run() -> void:
+	main.change_snow_layers(40)
 	main.change_snow(5.0)
 	super()
 	

@@ -1,15 +1,16 @@
 shader_type canvas_item;
 
 // Snow appearance parameters
-uniform float spread : hint_range(0.0, 1.5) = 0.5;        // Snowflake spread
-uniform float size : hint_range(0.01, 5.0) = 0.5;        // Snowflake size
-uniform vec4 snow_color : source_color = vec4(1.0);      // Snow color
-uniform float snow_transparency: hint_range(-0.5, 1.0) = 0.2;   // Intensity of the snow transparency
+uniform float spread : hint_range(0.0, 1.5) = 0.5;                 // Snowflake spread
+uniform float size : hint_range(0.01, 5.0) = 0.5;                  // Snowflake size
+uniform vec4 snow_color : source_color = vec4(1.0);                // Snow color
+uniform float snow_transparency : hint_range(-0.5, 1.0) = 0.2;     // Snow transparency intensity
 
 // Snow movement parameters
-uniform float speed : hint_range(0.0, 10.0) = 0.5;       // Fall speed
-uniform float wind : hint_range(-2.0, 2.0) = 0.0;        // Wind direction and strength
-uniform int num_of_layers = 40;                          // Depth layers
+uniform float speed : hint_range(0.0, 10.0) = 0.5;                 // Fall speed
+uniform float wind : hint_range(-2.0, 2.0) = 0.0;                  // (Optional) wind strength for UI/debug
+uniform float wind_offset = 0.0;                                   // Accumulated wind displacement (set from script)
+uniform int num_of_layers = 40;                                    // Depth layers
 
 // Constants for noise generation
 const mat3 NOISE_MATRIX = mat3(
@@ -19,17 +20,19 @@ const mat3 NOISE_MATRIX = mat3(
 );
 
 // Helper function to generate snowflake pattern
-vec3 generate_snowflake(vec2 coord, float layer_index, float time, float wind_strength) {
+vec3 generate_snowflake(vec2 coord, float layer_index, float time, float wind_strength, float wind_disp) {
     // Scale coordinates based on layer depth
     float layer_scale = 1.0 + layer_index * 0.5 / (max(size, 0.01) * 2.0);
     vec2 scaled_coord = coord * layer_scale;
 
     // Apply movement (falling + wind)
+    // IMPORTANT: wind is applied via wind_disp (accumulated in script) to avoid TIME-based jumps.
     vec2 movement = vec2(
         scaled_coord.y * (spread * mod(layer_index * 7.238917, 1.0) - spread * 0.5) +
-        (-wind_strength) * speed * time * 0.5,  // Reverse the wind direction by negating wind_strength
+        wind_disp,
         -speed * time / (1.0 + layer_index * 0.5 * 0.03)
     );
+
     vec2 final_coord = scaled_coord + movement;
 
     // Generate noise pattern
@@ -48,8 +51,10 @@ vec3 generate_snowflake(vec2 coord, float layer_index, float time, float wind_st
     // Calculate final shape
     float shape_value = 0.6 * max(shape.x - shape.y, shape.x + shape.y) + max(shape.x, shape.y) - 0.01;
 
-    return vec3(smoothstep(edge_softness, -edge_softness, shape_value) *
-                (random.x / (1.0 + 0.02 * layer_index * 0.5)));
+    return vec3(
+        smoothstep(edge_softness, -edge_softness, shape_value) *
+        (random.x / (1.0 + 0.02 * layer_index * 0.5))
+    );
 }
 
 void fragment() {
@@ -57,7 +62,7 @@ void fragment() {
 
     // Generate snow for each layer
     for (int i = 0; i < num_of_layers; i++) {
-        snow_accumulation += generate_snowflake(UV, float(i), TIME, wind);
+        snow_accumulation += generate_snowflake(UV, float(i), TIME, wind, wind_offset);
     }
 
     // Calculate final color
