@@ -51,6 +51,21 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryguw"]
+bg_color = Color(0, 0, 0, 0.6745098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0odxb"]
 bg_color = Color(0, 0, 0, 0.6745098)
 border_width_left = 2
@@ -97,21 +112,6 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82xsv"]
-bg_color = Color(0, 0, 0, 0.6745098)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryguw"]
 bg_color = Color(0, 0, 0, 0.6745098)
 border_width_left = 2
 border_width_top = 2
@@ -1994,7 +1994,9 @@ focus_mode = 0
 theme_override_fonts/font = ExtResource("4_7mycd")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_1u8w0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ryguw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0odxb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ryguw")
 text = "Head North"
 
 [node name="MarginContainer" type="MarginContainer" parent="Dialog/VBoxContainer"]
@@ -2059,28 +2061,37 @@ alignment = 1
 [node name="Choice1" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 theme_override_fonts/font = ExtResource("4_7mycd")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_lswn8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ryguw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a6jrf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ryguw")
 text = "Take the Map"
 
 [node name="Choice2" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 theme_override_fonts/font = ExtResource("4_7mycd")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_lswn8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ryguw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xuqvo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ryguw")
 text = "Take the Compass"
 
 [node name="Choice3" type="Button" parent="Dialog/VBoxContainer/Choices/VBoxChoices"]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 theme_override_fonts/font = ExtResource("4_7mycd")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_lswn8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ryguw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xuqvo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ryguw")
 text = "Take the Thermos
 "
 

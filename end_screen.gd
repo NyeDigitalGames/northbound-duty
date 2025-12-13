@@ -15,4 +15,4 @@ func _ready() -> void:
 	replay_button.pressed.connect (replay)
 	
 func replay() -> void:
-	get_tree().change_scene_to_file("res://opening_screen.tscn")
+	get_tree().change_scene_to_file("res://main.tscn")

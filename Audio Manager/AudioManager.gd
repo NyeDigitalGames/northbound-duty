@@ -9,7 +9,7 @@ var sfx_player: AudioStreamPlayer
 @export var music_tracks: Array[AudioStream] = []  # Array of music tracks for selection
 
 # Volume levels
-var music_volume: float = 0.7
+var music_volume: float = 0.1
 var sfx_volume: float = 0.8
 
 # Music track selection

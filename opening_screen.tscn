@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5egevpukx25j"]
+[gd_scene load_steps=13 format=3 uid="uid://5egevpukx25j"]
 
 [ext_resource type="Script" uid="uid://c43itc1xq4ish" path="res://opening_screen.gd" id="1_hdnta"]
 [ext_resource type="Shader" uid="uid://d18j7v7rq2ilg" path="res://Shaders/Snow.gdshader" id="1_pdbg4"]
@@ -38,8 +38,38 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikthu"]
+bg_color = Color(0, 0, 0, 0.39215687)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8s8l"]
 bg_color = Color(0, 0, 0, 0.6745098)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k5uf"]
+bg_color = Color(0, 0, 0, 0.39215687)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -152,7 +182,9 @@ size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("4_ikthu")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_hdnta")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ikthu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t8s8l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5k5uf")
 text = "Start"
 
 [node name="Timer" type="Timer" parent="."]

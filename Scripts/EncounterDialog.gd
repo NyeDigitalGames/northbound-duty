@@ -38,13 +38,13 @@ func run() -> void:
 		if line.check_flag=='':
 			await show_dialog(line)
 		else:
-			print("Check for: ", line.check_flag)
+			#print("Check for: ", line.check_flag)
 			if GameManager.check_for_flag(line.check_flag):
-				print ("Flag found!")
+				#print ("Flag found!")
 				await show_dialog(line)
 			else:
-				print ("Flag not found")
-	print (dialog_tree.size())
+				#print ("Flag not found")
+				pass
 	next_button.visible=false
 	v_box_choices.visible=true
 	choice_1.pressed.connect (choice_1_pressed)
@@ -99,7 +99,7 @@ func followup( choice_tree : Array) -> void:
 		return
 	for line in choice_tree:
 		if line.check_flag != '':
-			print("Check for: ", line.check_flag)
+			#print("Check for: ", line.check_flag)
 			if !GameManager.check_for_flag(line.check_flag):
 				continue
 		speaker_label.text = line.speaker
