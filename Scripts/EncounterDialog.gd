@@ -53,10 +53,16 @@ func run() -> void:
 
 func setup_speaker(speaking:String) -> void:
 	var style := speaker.get_theme_stylebox("panel") as StyleBoxFlat
-	if speaking == "Dispatch Elf":
+	if speaking == "Dispatch Elf" or speaking == "Elf Therapist":
 		style.bg_color = Color(0.151, 0.329, 0.212, 1.0)
 	elif speaking == "Narrator":
 		style.bg_color = Color(0.539, 0.024, 0.165, 1.0)
+	elif speaking == "The North":
+		style.bg_color = Color(0.363, 0.281, 0.015, 1.0)
+	elif speaking == "The Blizzard":
+		style.bg_color = Color(0.124, 0.257, 0.612, 1.0)
+	elif speaking == "Penguin" or speaking == "Penguins":
+		style.bg_color = Color(0.409, 0.181, 0.038, 1.0)
 	else:
 		style.bg_color = Color(0.18, 0.18, 0.18, 0.8)
 

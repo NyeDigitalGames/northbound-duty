@@ -6,6 +6,7 @@ var item : ITEMS = ITEMS.NONE
 var flags : Array[String] = []
 var catastrophe_level : int = 0
 var package_condition : int = 5
+var end_title : String = ''
 
 func _ready() -> void:
 	reset_values()
@@ -19,8 +20,15 @@ func reset_values() -> void:
 func add_item ( _item : ITEMS ) -> void:
 	item = _item
 
+func remove_item ( _item : ITEMS ) -> void:
+	if item == _item:
+		item = ITEMS.NONE
+
 func add_flag (flag : String) -> void:
 	flags.append(flag)
+	
+func remove_flag (flag : String) -> void:
+	flags.erase(flag)
 	
 func check_for_flag ( flag : String ) -> bool:
 	if flags.is_empty():
