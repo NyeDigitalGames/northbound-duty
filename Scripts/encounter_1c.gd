@@ -1,8 +1,6 @@
 extends EncounterDialog
 
 @onready var north_button: Button = $"../Dialog/VBoxContainer/Spacer/NorthButton"
-@onready var main: Control = $".."
-
 
 func run() -> void:
 	await super()
@@ -18,5 +16,4 @@ func run() -> void:
 func next_scene()->void:
 	north_button.pressed.disconnect(next_scene)
 	north_button.visible=false
-	main.change_snow(1.0)
 	done()
