@@ -21,7 +21,7 @@ func next_scene()->void:
 func evaluate_ending() -> void:
 	print ("catastrophe_level: ", str(GameManager.catastrophe_level))
 	print ("package_condition: ", str(GameManager.package_condition))
-	if GameManager.catastrophe_level >= 9 and GameManager.check_for_flag('delivery_honest') and GameManager.check_for_flag('reindeer_knows_truth'):
+	if GameManager.catastrophe_level >= 8 and GameManager.check_for_flag('delivery_honest') and GameManager.check_for_flag('reindeer_knows_truth'):
 		ending = 3
 		GameManager.end_title = 'WELCOME TO MANAGEMENT.'
 		GameManager.ending_number=4
